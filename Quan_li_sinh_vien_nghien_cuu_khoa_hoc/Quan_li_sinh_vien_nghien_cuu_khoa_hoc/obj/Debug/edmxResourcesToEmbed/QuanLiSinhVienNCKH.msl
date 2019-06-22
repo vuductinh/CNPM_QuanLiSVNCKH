@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="quan_li_sinh_vien_NCKHModelStoreContainer" CdmEntityContainer="quan_li_sinh_vien_NCKHEntities">
+    <EntitySetMapping Name="BoMons">
+      <EntityTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.BoMon">
+        <MappingFragment StoreEntitySet="BoMon">
+          <ScalarProperty Name="Mabomon" ColumnName="Mabomon" />
+          <ScalarProperty Name="tenbomon" ColumnName="tenbomon" />
+          <ScalarProperty Name="Makhoa" ColumnName="Makhoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChuyenNganhs">
+      <EntityTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.ChuyenNganh">
+        <MappingFragment StoreEntitySet="ChuyenNganh">
+          <ScalarProperty Name="MaCN" ColumnName="MaCN" />
+          <ScalarProperty Name="tenCN" ColumnName="tenCN" />
+          <ScalarProperty Name="Mabomon" ColumnName="Mabomon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetaiNCKHs">
+      <EntityTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.DetaiNCKH">
+        <MappingFragment StoreEntitySet="DetaiNCKH">
+          <ScalarProperty Name="Madetai" ColumnName="Madetai" />
+          <ScalarProperty Name="tendetai" ColumnName="tendetai" />
+          <ScalarProperty Name="noidung" ColumnName="noidung" />
+          <ScalarProperty Name="ngaybd" ColumnName="ngaybd" />
+          <ScalarProperty Name="ngaykt" ColumnName="ngaykt" />
+          <ScalarProperty Name="ketqua" ColumnName="ketqua" />
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+          <ScalarProperty Name="MaCN" ColumnName="MaCN" />
+          <ScalarProperty Name="stt" ColumnName="stt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiaoViens">
+      <EntityTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.GiaoVien">
+        <MappingFragment StoreEntitySet="GiaoVien">
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+          <ScalarProperty Name="TenGV" ColumnName="TenGV" />
+          <ScalarProperty Name="Mabomon" ColumnName="Mabomon" />
+          <ScalarProperty Name="ngaysinhgv" ColumnName="ngaysinhgv" />
+          <ScalarProperty Name="luong" ColumnName="luong" />
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="gioitinhGV" ColumnName="gioitinhGV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khoas">
+      <EntityTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.Khoa">
+        <MappingFragment StoreEntitySet="Khoa">
+          <ScalarProperty Name="Makhoa" ColumnName="Makhoa" />
+          <ScalarProperty Name="Tenkhoa" ColumnName="Tenkhoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LopSHes">
+      <EntityTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.LopSH">
+        <MappingFragment StoreEntitySet="LopSH">
+          <ScalarProperty Name="MalopSH" ColumnName="MalopSH" />
+          <ScalarProperty Name="Tenlopsh" ColumnName="Tenlopsh" />
+          <ScalarProperty Name="Makhoa" ColumnName="Makhoa" />
+          <ScalarProperty Name="tongsoSV" ColumnName="tongsoSV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuanliTHs">
+      <EntityTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.QuanliTH">
+        <MappingFragment StoreEntitySet="QuanliTH">
+          <ScalarProperty Name="MaSV" ColumnName="MaSV" />
+          <ScalarProperty Name="Madetai" ColumnName="Madetai" />
+          <ScalarProperty Name="NDthuchien" ColumnName="NDthuchien" />
+          <ScalarProperty Name="ketqua" ColumnName="ketqua" />
+          <ScalarProperty Name="vaitro" ColumnName="vaitro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SinhViens">
+      <EntityTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.SinhVien">
+        <MappingFragment StoreEntitySet="SinhVien">
+          <ScalarProperty Name="MaSV" ColumnName="MaSV" />
+          <ScalarProperty Name="TenSV" ColumnName="TenSV" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="MalopSH" ColumnName="MalopSH" />
+          <ScalarProperty Name="tongsodetai" ColumnName="tongsodetai" />
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Taikhoans">
+      <EntityTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.Taikhoan">
+        <MappingFragment StoreEntitySet="Taikhoan">
+          <ScalarProperty Name="tentaikhoan" ColumnName="tentaikhoan" />
+          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TienDoTHs">
+      <EntityTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.TienDoTH">
+        <MappingFragment StoreEntitySet="TienDoTH">
+          <ScalarProperty Name="MaTD" ColumnName="MaTD" />
+          <ScalarProperty Name="ketquaTD" ColumnName="ketquaTD" />
+          <ScalarProperty Name="Madetai" ColumnName="Madetai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="quan_li_sinh_vien_NCKHModel.Store.thongtingv" FunctionImportName="thongtingv">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.thongtingv_Result">
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+          <ScalarProperty Name="TenGV" ColumnName="TenGV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="quan_li_sinh_vien_NCKHModel.Store.uf_xemGV" FunctionImportName="uf_xemGV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.uf_xemGV_Result">
+          <ScalarProperty Name="MaSV" ColumnName="MaSV" />
+          <ScalarProperty Name="TenSV" ColumnName="TenSV" />
+          <ScalarProperty Name="tendetai" ColumnName="tendetai" />
+          <ScalarProperty Name="TenGV" ColumnName="TenGV" />
+          <ScalarProperty Name="tuoi" ColumnName="tuoi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="quan_li_sinh_vien_NCKHModel.Store.uf_xemSV" FunctionImportName="uf_xemSV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.uf_xemSV_Result">
+          <ScalarProperty Name="MaSV" ColumnName="MaSV" />
+          <ScalarProperty Name="TenSV" ColumnName="TenSV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="quan_li_sinh_vien_NCKHModel.Store.utf_giaovien" FunctionImportName="utf_giaovien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.utf_giaovien_Result">
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+          <ScalarProperty Name="TenGV" ColumnName="TenGV" />
+          <ScalarProperty Name="gioitinhGV" ColumnName="gioitinhGV" />
+          <ScalarProperty Name="Mabomon" ColumnName="Mabomon" />
+          <ScalarProperty Name="ngaysinhgv" ColumnName="ngaysinhgv" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="danhsachdetai" FunctionName="quan_li_sinh_vien_NCKHModel.Store.danhsachdetai">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.danhsachdetai_Result">
+          <ScalarProperty Name="stt" ColumnName="stt" />
+          <ScalarProperty Name="Mã_đề_tài" ColumnName="Mã đề tài" />
+          <ScalarProperty Name="Tên_đề_tài" ColumnName="Tên đề tài" />
+          <ScalarProperty Name="Nội_dung" ColumnName="Nội dung" />
+          <ScalarProperty Name="Ngày_bắt_đầu" ColumnName="Ngày bắt đầu" />
+          <ScalarProperty Name="Ngày_kết_thúc" ColumnName="Ngày kết thúc" />
+          <ScalarProperty Name="Giáo_viên" ColumnName="Giáo viên" />
+          <ScalarProperty Name="Chuyên_ngành" ColumnName="Chuyên ngành" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DanhSachGV" FunctionName="quan_li_sinh_vien_NCKHModel.Store.DanhSachGV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.DanhSachGV_Result">
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+          <ScalarProperty Name="Họ_và_tên" ColumnName="Họ và tên" />
+          <ScalarProperty Name="tenbomon" ColumnName="tenbomon" />
+          <ScalarProperty Name="Đề_tài" ColumnName="Đề tài" />
+          <ScalarProperty Name="Giới_tính" ColumnName="Giới tính" />
+          <ScalarProperty Name="Ngày_sinh" ColumnName="Ngày sinh" />
+          <ScalarProperty Name="Lương" ColumnName="Lương" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DanhsachSV" FunctionName="quan_li_sinh_vien_NCKHModel.Store.DanhsachSV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.DanhsachSV_Result">
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="MaSV" ColumnName="MaSV" />
+          <ScalarProperty Name="Họ_và_tên" ColumnName="Họ và tên" />
+          <ScalarProperty Name="Ngày_sinh" ColumnName="Ngày sinh" />
+          <ScalarProperty Name="Giới_tính" ColumnName="Giới tính" />
+          <ScalarProperty Name="Địa_chỉ" ColumnName="Địa chỉ" />
+          <ScalarProperty Name="Lớp_SH" ColumnName="Lớp SH" />
+          <ScalarProperty Name="Tên_đề_tài" ColumnName="Tên đề tài" />
+          <ScalarProperty Name="kết_quả" ColumnName="kết quả" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="demsv" FunctionName="quan_li_sinh_vien_NCKHModel.Store.demsv" />
+    <FunctionImportMapping FunctionImportName="InsertSV" FunctionName="quan_li_sinh_vien_NCKHModel.Store.InsertSV" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="quan_li_sinh_vien_NCKHModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="quan_li_sinh_vien_NCKHModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="quan_li_sinh_vien_NCKHModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="quan_li_sinh_vien_NCKHModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="quan_li_sinh_vien_NCKHModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="quan_li_sinh_vien_NCKHModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="quan_li_sinh_vien_NCKHModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="suadetai" FunctionName="quan_li_sinh_vien_NCKHModel.Store.suadetai" />
+    <FunctionImportMapping FunctionImportName="Suagiaovien" FunctionName="quan_li_sinh_vien_NCKHModel.Store.Suagiaovien" />
+    <FunctionImportMapping FunctionImportName="suasv" FunctionName="quan_li_sinh_vien_NCKHModel.Store.suasv" />
+    <FunctionImportMapping FunctionImportName="svien" FunctionName="quan_li_sinh_vien_NCKHModel.Store.svien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.svien_Result">
+          <ScalarProperty Name="MaSV" ColumnName="MaSV" />
+          <ScalarProperty Name="TenSV" ColumnName="TenSV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="them_sv" FunctionName="quan_li_sinh_vien_NCKHModel.Store.them_sv" />
+    <FunctionImportMapping FunctionImportName="themdetai" FunctionName="quan_li_sinh_vien_NCKHModel.Store.themdetai" />
+    <FunctionImportMapping FunctionImportName="ThemDT" FunctionName="quan_li_sinh_vien_NCKHModel.Store.ThemDT" />
+    <FunctionImportMapping FunctionImportName="themgiaovien" FunctionName="quan_li_sinh_vien_NCKHModel.Store.themgiaovien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.themgiaovien_Result">
+          <ScalarProperty Name="Madetai" ColumnName="Madetai" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="themsinhvien" FunctionName="quan_li_sinh_vien_NCKHModel.Store.themsinhvien" />
+    <FunctionImportMapping FunctionImportName="thongke" FunctionName="quan_li_sinh_vien_NCKHModel.Store.thongke" />
+    <FunctionImportMapping FunctionImportName="thongke_bomon" FunctionName="quan_li_sinh_vien_NCKHModel.Store.thongke_bomon">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.thongke_bomon_Result">
+          <ScalarProperty Name="Mabomon" ColumnName="Mabomon" />
+          <ScalarProperty Name="tenbomon" ColumnName="tenbomon" />
+          <ScalarProperty Name="Tenkhoa" ColumnName="Tenkhoa" />
+          <ScalarProperty Name="TenGV" ColumnName="TenGV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="thongke_sv" FunctionName="quan_li_sinh_vien_NCKHModel.Store.thongke_sv">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.thongke_sv_Result">
+          <ScalarProperty Name="MaSV" ColumnName="MaSV" />
+          <ScalarProperty Name="TenSV" ColumnName="TenSV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ThongkeSV" FunctionName="quan_li_sinh_vien_NCKHModel.Store.ThongkeSV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.ThongkeSV_Result">
+          <ScalarProperty Name="MaSV" ColumnName="MaSV" />
+          <ScalarProperty Name="TenSV" ColumnName="TenSV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="thongtin" FunctionName="quan_li_sinh_vien_NCKHModel.Store.thongtin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.thongtin_Result">
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+          <ScalarProperty Name="TenGV" ColumnName="TenGV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="thongtin_sv" FunctionName="quan_li_sinh_vien_NCKHModel.Store.thongtin_sv">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.thongtin_sv_Result">
+          <ScalarProperty Name="MaSV" ColumnName="MaSV" />
+          <ScalarProperty Name="TenSV" ColumnName="TenSV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Thongtinbm" FunctionName="quan_li_sinh_vien_NCKHModel.Store.Thongtinbm">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.Thongtinbm_Result">
+          <ScalarProperty Name="Mabomon" ColumnName="Mabomon" />
+          <ScalarProperty Name="tenbomon" ColumnName="tenbomon" />
+          <ScalarProperty Name="TenGV" ColumnName="TenGV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="timkiemdetai" FunctionName="quan_li_sinh_vien_NCKHModel.Store.timkiemdetai">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.timkiemdetai_Result">
+          <ScalarProperty Name="stt" ColumnName="stt" />
+          <ScalarProperty Name="Mã_đề_tài" ColumnName="Mã đề tài" />
+          <ScalarProperty Name="Tên_đề_tài" ColumnName="Tên đề tài" />
+          <ScalarProperty Name="Nội_dung" ColumnName="Nội dung" />
+          <ScalarProperty Name="Ngày_bắt_đầu" ColumnName="Ngày bắt đầu" />
+          <ScalarProperty Name="Ngày_kết_thúc" ColumnName="Ngày kết thúc" />
+          <ScalarProperty Name="Giáo_viên" ColumnName="Giáo viên" />
+          <ScalarProperty Name="Chuyên_ngành" ColumnName="Chuyên ngành" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TimkiemGV" FunctionName="quan_li_sinh_vien_NCKHModel.Store.TimkiemGV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.TimkiemGV_Result">
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+          <ScalarProperty Name="Họ_và_tên" ColumnName="Họ và tên" />
+          <ScalarProperty Name="tenbomon" ColumnName="tenbomon" />
+          <ScalarProperty Name="Đề_tài" ColumnName="Đề tài" />
+          <ScalarProperty Name="Giới_tính" ColumnName="Giới tính" />
+          <ScalarProperty Name="Ngày_sinh" ColumnName="Ngày sinh" />
+          <ScalarProperty Name="Lương" ColumnName="Lương" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TimkiemSV" FunctionName="quan_li_sinh_vien_NCKHModel.Store.TimkiemSV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quan_li_sinh_vien_NCKHModel.TimkiemSV_Result">
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="MaSV" ColumnName="MaSV" />
+          <ScalarProperty Name="Họ_và_tên" ColumnName="Họ và tên" />
+          <ScalarProperty Name="Ngày_sinh" ColumnName="Ngày sinh" />
+          <ScalarProperty Name="Giới_tính" ColumnName="Giới tính" />
+          <ScalarProperty Name="Địa_chỉ" ColumnName="Địa chỉ" />
+          <ScalarProperty Name="Lớp_SH" ColumnName="Lớp SH" />
+          <ScalarProperty Name="Tên_đề_tài" ColumnName="Tên đề tài" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TK" FunctionName="quan_li_sinh_vien_NCKHModel.Store.TK" />
+    <FunctionImportMapping FunctionImportName="xoadetai" FunctionName="quan_li_sinh_vien_NCKHModel.Store.xoadetai" />
+    <FunctionImportMapping FunctionImportName="xoagiaovien" FunctionName="quan_li_sinh_vien_NCKHModel.Store.xoagiaovien" />
+    <FunctionImportMapping FunctionImportName="XoaSV1" FunctionName="quan_li_sinh_vien_NCKHModel.Store.XoaSV1" />
+  </EntityContainerMapping>
+</Mapping>

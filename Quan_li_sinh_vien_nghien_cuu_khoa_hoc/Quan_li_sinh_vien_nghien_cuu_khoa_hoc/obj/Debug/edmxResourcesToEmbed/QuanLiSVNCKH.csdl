@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quan_li_sinh_vien_NCKHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="thongtingv_Result">
+    <Property Name="MaGV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TenGV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="uf_xemGV_Result">
+    <Property Name="MaSV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TenSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tendetai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenGV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tuoi" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="uf_xemSV_Result">
+    <Property Name="MaSV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TenSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="utf_giaovien_Result">
+    <Property Name="MaGV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TenGV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gioitinhGV" Type="Boolean" />
+    <Property Name="Mabomon" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="ngaysinhgv" Type="DateTime" />
+  </ComplexType>
+  <EntityType Name="BoMon">
+    <Key>
+      <PropertyRef Name="Mabomon" />
+    </Key>
+    <Property Name="Mabomon" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="tenbomon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Makhoa" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Khoa" Relationship="Self.FK__BoMon__Makhoa__398D8EEE" FromRole="BoMon" ToRole="Khoa" />
+    <NavigationProperty Name="ChuyenNganhs" Relationship="Self.FK__ChuyenNga__Mabom__45F365D3" FromRole="BoMon" ToRole="ChuyenNganh" />
+    <NavigationProperty Name="GiaoViens" Relationship="Self.FK__GiaoVien__Mabomo__160F4887" FromRole="BoMon" ToRole="GiaoVien" />
+  </EntityType>
+  <EntityType Name="ChuyenNganh">
+    <Key>
+      <PropertyRef Name="MaCN" />
+    </Key>
+    <Property Name="MaCN" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="tenCN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mabomon" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="BoMon" Relationship="Self.FK__ChuyenNga__Mabom__45F365D3" FromRole="ChuyenNganh" ToRole="BoMon" />
+    <NavigationProperty Name="DetaiNCKHs" Relationship="Self.FK__DetaiNCKH__MaCN__19DFD96B" FromRole="ChuyenNganh" ToRole="DetaiNCKH" />
+  </EntityType>
+  <EntityType Name="DetaiNCKH">
+    <Key>
+      <PropertyRef Name="Madetai" />
+    </Key>
+    <Property Name="Madetai" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="tendetai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="noidung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ngaybd" Type="DateTime" Precision="0" />
+    <Property Name="ngaykt" Type="DateTime" Precision="0" />
+    <Property Name="ketqua" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaGV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="MaCN" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="ChuyenNganh" Relationship="Self.FK__DetaiNCKH__MaCN__19DFD96B" FromRole="DetaiNCKH" ToRole="ChuyenNganh" />
+    <NavigationProperty Name="GiaoVien" Relationship="Self.FK__DetaiNCKH__MaGV__18EBB532" FromRole="DetaiNCKH" ToRole="GiaoVien" />
+    <NavigationProperty Name="QuanliTHs" Relationship="Self.FK__QuanliTH__Madeta__41EDCAC5" FromRole="DetaiNCKH" ToRole="QuanliTH" />
+    <NavigationProperty Name="TienDoTHs" Relationship="Self.FK__TienDoTH__Madeta__1EA48E88" FromRole="DetaiNCKH" ToRole="TienDoTH" />
+  </EntityType>
+  <EntityType Name="GiaoVien">
+    <Key>
+      <PropertyRef Name="MaGV" />
+    </Key>
+    <Property Name="MaGV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TenGV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gioitinhGV" Type="Boolean" />
+    <Property Name="Mabomon" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="ngaysinhgv" Type="DateTime" Precision="0" />
+    <Property Name="luong" Type="Int32" />
+    <NavigationProperty Name="BoMon" Relationship="Self.FK__GiaoVien__Mabomo__160F4887" FromRole="GiaoVien" ToRole="BoMon" />
+    <NavigationProperty Name="DetaiNCKHs" Relationship="Self.FK__DetaiNCKH__MaGV__18EBB532" FromRole="GiaoVien" ToRole="DetaiNCKH" />
+  </EntityType>
+  <EntityType Name="Khoa">
+    <Key>
+      <PropertyRef Name="Makhoa" />
+    </Key>
+    <Property Name="Makhoa" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Tenkhoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BoMons" Relationship="Self.FK__BoMon__Makhoa__398D8EEE" FromRole="Khoa" ToRole="BoMon" />
+    <NavigationProperty Name="LopSHes" Relationship="Self.FK__LopSH__Makhoa__3C69FB99" FromRole="Khoa" ToRole="LopSH" />
+  </EntityType>
+  <EntityType Name="LopSH">
+    <Key>
+      <PropertyRef Name="MalopSH" />
+    </Key>
+    <Property Name="MalopSH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Tenlopsh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Makhoa" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="tongsoSV" Type="Int32" />
+    <NavigationProperty Name="Khoa" Relationship="Self.FK__LopSH__Makhoa__3C69FB99" FromRole="LopSH" ToRole="Khoa" />
+    <NavigationProperty Name="SinhViens" Relationship="Self.FK__SinhVien__MalopS__3F466844" FromRole="LopSH" ToRole="SinhVien" />
+  </EntityType>
+  <EntityType Name="QuanliTH">
+    <Key>
+      <PropertyRef Name="MaSV" />
+      <PropertyRef Name="Madetai" />
+    </Key>
+    <Property Name="MaSV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Madetai" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NDthuchien" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ketqua" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vaitro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DetaiNCKH" Relationship="Self.FK__QuanliTH__Madeta__41EDCAC5" FromRole="QuanliTH" ToRole="DetaiNCKH" />
+    <NavigationProperty Name="SinhVien" Relationship="Self.FK__QuanliTH__MaSV__40F9A68C" FromRole="QuanliTH" ToRole="SinhVien" />
+  </EntityType>
+  <EntityType Name="SinhVien">
+    <Key>
+      <PropertyRef Name="MaSV" />
+    </Key>
+    <Property Name="MaSV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TenSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gioitinh" Type="Boolean" />
+    <Property Name="MalopSH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="tongsodetai" Type="Int32" />
+    <Property Name="STT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="LopSH" Relationship="Self.FK__SinhVien__MalopS__3F466844" FromRole="SinhVien" ToRole="LopSH" />
+    <NavigationProperty Name="QuanliTHs" Relationship="Self.FK__QuanliTH__MaSV__40F9A68C" FromRole="SinhVien" ToRole="QuanliTH" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TienDoTH">
+    <Key>
+      <PropertyRef Name="MaTD" />
+    </Key>
+    <Property Name="MaTD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ketquaTD" Type="Int32" />
+    <Property Name="Madetai" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="DetaiNCKH" Relationship="Self.FK__TienDoTH__Madeta__1EA48E88" FromRole="TienDoTH" ToRole="DetaiNCKH" />
+  </EntityType>
+  <Association Name="FK__BoMon__Makhoa__398D8EEE">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="BoMon" Type="Self.BoMon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="Makhoa" />
+      </Principal>
+      <Dependent Role="BoMon">
+        <PropertyRef Name="Makhoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChuyenNga__Mabom__45F365D3">
+    <End Role="BoMon" Type="Self.BoMon" Multiplicity="0..1" />
+    <End Role="ChuyenNganh" Type="Self.ChuyenNganh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BoMon">
+        <PropertyRef Name="Mabomon" />
+      </Principal>
+      <Dependent Role="ChuyenNganh">
+        <PropertyRef Name="Mabomon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GiaoVien__Mabomo__160F4887">
+    <End Role="BoMon" Type="Self.BoMon" Multiplicity="0..1" />
+    <End Role="GiaoVien" Type="Self.GiaoVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BoMon">
+        <PropertyRef Name="Mabomon" />
+      </Principal>
+      <Dependent Role="GiaoVien">
+        <PropertyRef Name="Mabomon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetaiNCKH__MaCN__19DFD96B">
+    <End Role="ChuyenNganh" Type="Self.ChuyenNganh" Multiplicity="0..1" />
+    <End Role="DetaiNCKH" Type="Self.DetaiNCKH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChuyenNganh">
+        <PropertyRef Name="MaCN" />
+      </Principal>
+      <Dependent Role="DetaiNCKH">
+        <PropertyRef Name="MaCN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetaiNCKH__MaGV__18EBB532">
+    <End Role="GiaoVien" Type="Self.GiaoVien" Multiplicity="0..1" />
+    <End Role="DetaiNCKH" Type="Self.DetaiNCKH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GiaoVien">
+        <PropertyRef Name="MaGV" />
+      </Principal>
+      <Dependent Role="DetaiNCKH">
+        <PropertyRef Name="MaGV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__QuanliTH__Madeta__41EDCAC5">
+    <End Role="DetaiNCKH" Type="Self.DetaiNCKH" Multiplicity="1" />
+    <End Role="QuanliTH" Type="Self.QuanliTH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DetaiNCKH">
+        <PropertyRef Name="Madetai" />
+      </Principal>
+      <Dependent Role="QuanliTH">
+        <PropertyRef Name="Madetai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TienDoTH__Madeta__1EA48E88">
+    <End Role="DetaiNCKH" Type="Self.DetaiNCKH" Multiplicity="0..1" />
+    <End Role="TienDoTH" Type="Self.TienDoTH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DetaiNCKH">
+        <PropertyRef Name="Madetai" />
+      </Principal>
+      <Dependent Role="TienDoTH">
+        <PropertyRef Name="Madetai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LopSH__Makhoa__3C69FB99">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="LopSH" Type="Self.LopSH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="Makhoa" />
+      </Principal>
+      <Dependent Role="LopSH">
+        <PropertyRef Name="Makhoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SinhVien__MalopS__3F466844">
+    <End Role="LopSH" Type="Self.LopSH" Multiplicity="0..1" />
+    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LopSH">
+        <PropertyRef Name="MalopSH" />
+      </Principal>
+      <Dependent Role="SinhVien">
+        <PropertyRef Name="MalopSH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__QuanliTH__MaSV__40F9A68C">
+    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="1" />
+    <End Role="QuanliTH" Type="Self.QuanliTH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SinhVien">
+        <PropertyRef Name="MaSV" />
+      </Principal>
+      <Dependent Role="QuanliTH">
+        <PropertyRef Name="MaSV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="quan_li_sinh_vien_NCKHEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BoMons" EntityType="Self.BoMon" />
+    <EntitySet Name="ChuyenNganhs" EntityType="Self.ChuyenNganh" />
+    <EntitySet Name="DetaiNCKHs" EntityType="Self.DetaiNCKH" />
+    <EntitySet Name="GiaoViens" EntityType="Self.GiaoVien" />
+    <EntitySet Name="Khoas" EntityType="Self.Khoa" />
+    <EntitySet Name="LopSHes" EntityType="Self.LopSH" />
+    <EntitySet Name="QuanliTHs" EntityType="Self.QuanliTH" />
+    <EntitySet Name="SinhViens" EntityType="Self.SinhVien" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TienDoTHs" EntityType="Self.TienDoTH" />
+    <AssociationSet Name="FK__BoMon__Makhoa__398D8EEE" Association="Self.FK__BoMon__Makhoa__398D8EEE">
+      <End Role="Khoa" EntitySet="Khoas" />
+      <End Role="BoMon" EntitySet="BoMons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChuyenNga__Mabom__45F365D3" Association="Self.FK__ChuyenNga__Mabom__45F365D3">
+      <End Role="BoMon" EntitySet="BoMons" />
+      <End Role="ChuyenNganh" EntitySet="ChuyenNganhs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GiaoVien__Mabomo__160F4887" Association="Self.FK__GiaoVien__Mabomo__160F4887">
+      <End Role="BoMon" EntitySet="BoMons" />
+      <End Role="GiaoVien" EntitySet="GiaoViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetaiNCKH__MaCN__19DFD96B" Association="Self.FK__DetaiNCKH__MaCN__19DFD96B">
+      <End Role="ChuyenNganh" EntitySet="ChuyenNganhs" />
+      <End Role="DetaiNCKH" EntitySet="DetaiNCKHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetaiNCKH__MaGV__18EBB532" Association="Self.FK__DetaiNCKH__MaGV__18EBB532">
+      <End Role="GiaoVien" EntitySet="GiaoViens" />
+      <End Role="DetaiNCKH" EntitySet="DetaiNCKHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__QuanliTH__Madeta__41EDCAC5" Association="Self.FK__QuanliTH__Madeta__41EDCAC5">
+      <End Role="DetaiNCKH" EntitySet="DetaiNCKHs" />
+      <End Role="QuanliTH" EntitySet="QuanliTHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TienDoTH__Madeta__1EA48E88" Association="Self.FK__TienDoTH__Madeta__1EA48E88">
+      <End Role="DetaiNCKH" EntitySet="DetaiNCKHs" />
+      <End Role="TienDoTH" EntitySet="TienDoTHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LopSH__Makhoa__3C69FB99" Association="Self.FK__LopSH__Makhoa__3C69FB99">
+      <End Role="Khoa" EntitySet="Khoas" />
+      <End Role="LopSH" EntitySet="LopSHes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SinhVien__MalopS__3F466844" Association="Self.FK__SinhVien__MalopS__3F466844">
+      <End Role="LopSH" EntitySet="LopSHes" />
+      <End Role="SinhVien" EntitySet="SinhViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__QuanliTH__MaSV__40F9A68C" Association="Self.FK__QuanliTH__MaSV__40F9A68C">
+      <End Role="SinhVien" EntitySet="SinhViens" />
+      <End Role="QuanliTH" EntitySet="QuanliTHs" />
+    </AssociationSet>
+    <FunctionImport Name="thongtingv" IsComposable="true" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.thongtingv_Result)">
+      <Parameter Name="tenkhoa" Mode="In" Type="String" />
+      <Parameter Name="tendetai" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uf_xemGV" IsComposable="true" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.uf_xemGV_Result)" />
+    <FunctionImport Name="uf_xemSV" IsComposable="true" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.uf_xemSV_Result)">
+      <Parameter Name="ma" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="utf_giaovien" IsComposable="true" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.utf_giaovien_Result)">
+      <Parameter Name="mgv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DanhsachSV" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.DanhsachSV_Result)" />
+    <FunctionImport Name="demsv" ReturnType="Collection(Int32)">
+      <Parameter Name="ten" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertSV">
+      <Parameter Name="ma" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="svien" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.svien_Result)">
+      <Parameter Name="dtai" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="them_sv">
+      <Parameter Name="ma" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="themdetai">
+      <Parameter Name="ma" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ThemDT">
+      <Parameter Name="ma" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="themgiaovien" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.themgiaovien_Result)">
+      <Parameter Name="ma" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="themsinhvien">
+      <Parameter Name="ma" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="thongke" ReturnType="Collection(Int32)">
+      <Parameter Name="ketqua" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="thongke_bomon" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.thongke_bomon_Result)">
+      <Parameter Name="ten" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="thongke_sv" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.thongke_sv_Result)">
+      <Parameter Name="ten" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ThongkeSV" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.ThongkeSV_Result)">
+      <Parameter Name="ten" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="thongtin" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.thongtin_Result)">
+      <Parameter Name="tenkhoa" Mode="In" Type="String" />
+      <Parameter Name="tendt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="thongtin_sv" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.thongtin_sv_Result)">
+      <Parameter Name="ten" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Thongtinbm" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.Thongtinbm_Result)">
+      <Parameter Name="ten" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TimkiemSV" ReturnType="Collection(quan_li_sinh_vien_NCKHModel.TimkiemSV_Result)">
+      <Parameter Name="tensv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TK" ReturnType="Collection(Int32)">
+      <Parameter Name="ten" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="DanhsachSV_Result">
+    <Property Type="Int32" Name="STT" Nullable="false" />
+    <Property Type="String" Name="MaSV" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Họ_và_tên" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Ngày_sinh" Nullable="true" />
+    <Property Type="Boolean" Name="Giới_tính" Nullable="true" />
+    <Property Type="String" Name="Địa_chỉ" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lớp_SH" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tên_đề_tài" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="svien_Result">
+    <Property Type="String" Name="MaSV" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TenSV" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="themgiaovien_Result">
+    <Property Type="String" Name="Madetai" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Column1" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="thongke_bomon_Result">
+    <Property Type="String" Name="Mabomon" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="tenbomon" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tenkhoa" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TenGV" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="thongke_sv_Result">
+    <Property Type="String" Name="MaSV" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TenSV" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ThongkeSV_Result">
+    <Property Type="String" Name="MaSV" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TenSV" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="thongtin_Result">
+    <Property Type="String" Name="MaGV" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TenGV" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="thongtin_sv_Result">
+    <Property Type="String" Name="MaSV" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TenSV" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Thongtinbm_Result">
+    <Property Type="String" Name="Mabomon" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="tenbomon" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TenGV" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="TimkiemSV_Result">
+    <Property Type="Int32" Name="STT" Nullable="false" />
+    <Property Type="String" Name="MaSV" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Họ_và_tên" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Ngày_sinh" Nullable="true" />
+    <Property Type="Boolean" Name="Giới_tính" Nullable="true" />
+    <Property Type="String" Name="Địa_chỉ" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lớp_SH" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tên_đề_tài" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

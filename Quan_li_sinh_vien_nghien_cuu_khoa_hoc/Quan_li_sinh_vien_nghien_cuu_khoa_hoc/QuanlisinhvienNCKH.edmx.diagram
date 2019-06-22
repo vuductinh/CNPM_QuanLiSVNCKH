@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6394d7b812cb4e47b715621f960e9677" Name="Diagram1">
+        <EntityTypeShape EntityType="quan_li_sinh_vien_NCKHModel.BoMon" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_li_sinh_vien_NCKHModel.ChuyenNganh" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_li_sinh_vien_NCKHModel.DetaiNCKH" Width="1.5" PointX="7.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_li_sinh_vien_NCKHModel.GiaoVien" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_li_sinh_vien_NCKHModel.Khoa" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_li_sinh_vien_NCKHModel.LopSH" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_li_sinh_vien_NCKHModel.QuanliTH" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_li_sinh_vien_NCKHModel.SinhVien" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_li_sinh_vien_NCKHModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_li_sinh_vien_NCKHModel.Taikhoan" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quan_li_sinh_vien_NCKHModel.TienDoTH" Width="1.5" PointX="9.75" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="quan_li_sinh_vien_NCKHModel.FK__BoMon__Makhoa__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="quan_li_sinh_vien_NCKHModel.FK__ChuyenNga__Mabom__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="quan_li_sinh_vien_NCKHModel.FK__GiaoVien__Mabomo__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="quan_li_sinh_vien_NCKHModel.FK__DetaiNCKH__MaCN__19DFD96B" ManuallyRouted="false" />
+        <AssociationConnector Association="quan_li_sinh_vien_NCKHModel.FK__DetaiNCKH__MaGV__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="quan_li_sinh_vien_NCKHModel.FK__QuanliTH__Madeta__41EDCAC5" ManuallyRouted="false" />
+        <AssociationConnector Association="quan_li_sinh_vien_NCKHModel.FK__TienDoTH__Madeta__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="quan_li_sinh_vien_NCKHModel.FK__LopSH__Makhoa__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="quan_li_sinh_vien_NCKHModel.FK__SinhVien__MalopS__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="quan_li_sinh_vien_NCKHModel.FK__QuanliTH__MaSV__40F9A68C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

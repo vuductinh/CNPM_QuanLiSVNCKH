@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59F110F6-51A5-4111-9FDE-E85628F1DD87}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Quan_li_sinh_vien_nghien_cuu_khoa_hoc</RootNamespace>
+    <AssemblyName>Quan_li_sinh_vien_nghien_cuu_khoa_hoc</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoMon.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChuyenNganh.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="danhsachdetai_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachGV_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DanhsachSV_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnection.cs" />
+    <Compile Include="DetaiNCKH.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoVien.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Khoa.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LopSH.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlisinhvienNCKH.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlisinhvienNCKH.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlisinhvienNCKH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlisinhvienNCKH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlisinhvienNCKH.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="QuanliSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanliSV.Designer.cs">
+      <DependentUpon>QuanliSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quanlidetai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quanlidetai.Designer.cs">
+      <DependentUpon>Quanlidetai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiGiaoVien.Designer.cs">
+      <DependentUpon>QuanLiGiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanliTH.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SinhVien.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="svien_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Taikhoan.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="themgiaovien_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThongkeSV_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="thongke_bomon_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="thongke_sv_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Thongtinbm_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="thongtingv_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="thongtin_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="thongtin_sv_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TienDoTH.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="timkiemdetai_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimkiemGV_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimkiemSV_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uf_xemGV_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uf_xemSV_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="utf_giaovien_Result.cs">
+      <DependentUpon>QuanlisinhvienNCKH.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanliSV.resx">
+      <DependentUpon>QuanliSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Quanlidetai.resx">
+      <DependentUpon>Quanlidetai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiGiaoVien.resx">
+      <DependentUpon>QuanLiGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="QuanlisinhvienNCKH.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanlisinhvienNCKH.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QuanlisinhvienNCKH.edmx.diagram">
+      <DependentUpon>QuanlisinhvienNCKH.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QuanlisinhvienNCKH.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanlisinhvienNCKH.edmx</DependentUpon>
+      <LastGenOutput>QuanlisinhvienNCKH.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QuanlisinhvienNCKH.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanlisinhvienNCKH.edmx</DependentUpon>
+      <LastGenOutput>QuanlisinhvienNCKH.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
